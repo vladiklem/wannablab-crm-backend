@@ -1,7 +1,7 @@
 const express = require("express");
 
 const router = require("./router/router");
-const setupMiddlewares = require("./midlewares");
+const setupMiddlewares = require("./middlewares/middlewares");
 const systemController = require("./controllers/systemController");
 const setupDatabase = require("./database/database");
 
@@ -11,9 +11,10 @@ process.on("unhandledRejection", (err) => {
 
 const startServer = (port) => {
 	const app = express();
+	
+	setupDatabase();
 
 	setupMiddlewares(app);
-	setupDatabase();
 	router(app);
 	systemController(app);
 

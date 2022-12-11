@@ -1,17 +1,17 @@
 const {
 	checkDuplicateUserNameOrEmailMiddleware,
-} = require("../midlewares/auth.midleware");
+} = require("../middlewares/auth.middleware");
 
 const controller = require("../controllers/auth.controller");
 
 const registerAuthRoutes = (app) => {
 	app.post(
-		"/auth/signup",
+		null,
 		[checkDuplicateUserNameOrEmailMiddleware],
 		controller.signup,
 	);
 
-	app.post("/auth/signin", controller.signin);
+	app.post(null, controller.signin);
 };
 
 module.exports = registerAuthRoutes;

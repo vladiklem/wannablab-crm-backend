@@ -1,5 +1,4 @@
 const path = require("path");
-const registerAuthRoutes = require("./auth.routes");
 
 const registerStudentRoutes = require("./students");
 
@@ -9,7 +8,6 @@ const router = (app) => {
 	});
 
 	registerStudentRoutes(app);
-	registerAuthRoutes(app);
 };
 
 module.exports = router;

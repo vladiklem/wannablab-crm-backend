@@ -1,4 +1,4 @@
-const processEnv = require("./src/config/env.config");
+const { HTTP_CONFIG } = require("./src/config/configs");
 const startServer = require("./src/app");
 
-startServer(processEnv.PORT);
+startServer(HTTP_CONFIG.PORT);
